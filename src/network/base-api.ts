@@ -1,4 +1,4 @@
-import { HttpClient } from "./types";
+import { HttpClient } from './types';
 
 export abstract class BaseApi {
   protected client: HttpClient;

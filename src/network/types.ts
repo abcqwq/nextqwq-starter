@@ -1,10 +1,10 @@
 export type RequestMethod =
-  | "get"
-  | "post"
-  | "put"
-  | "patch"
-  | "delete"
-  | "head";
+  | 'get'
+  | 'post'
+  | 'put'
+  | 'patch'
+  | 'delete'
+  | 'head';
 
 export interface RequestConfig {
   url: string;
@@ -22,7 +22,7 @@ export interface ResponseWrapper<T = unknown> {
 }
 
 export type SuccessHandler = <T = unknown>(
-  response: ResponseWrapper<T>
+  response: ResponseWrapper<T>,
 ) => ResponseWrapper<T> | Promise<ResponseWrapper<T>>;
 export type ErrorHandler = (error: unknown) => unknown;
 
@@ -38,21 +38,21 @@ export interface HttpClient {
   get<T = unknown>(
     url: string,
     params?: Record<string, unknown>,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>>;
   post<T = unknown>(
     url: string,
     data?: unknown,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>>;
   put<T = unknown>(
     url: string,
     data?: unknown,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>>;
   del<T = unknown>(
     url: string,
     data?: unknown,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>>;
 }

@@ -1,11 +1,11 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import {
   HttpClient,
   RequestConfig,
   ResponseWrapper,
   SuccessHandler,
   ErrorHandler,
-} from "@/network/types";
+} from '@/network/types';
 
 export class AxiosHttpClient implements HttpClient {
   private instance: AxiosInstance;
@@ -21,7 +21,7 @@ export class AxiosHttpClient implements HttpClient {
         void this.handleSuccess(res);
         return res;
       },
-      (err: unknown) => this.handleError(err)
+      (err: unknown) => this.handleError(err),
     );
   }
 
@@ -46,11 +46,11 @@ export class AxiosHttpClient implements HttpClient {
   }
 
   private normalizeResponse<T = unknown>(
-    res: AxiosResponse<T>
+    res: AxiosResponse<T>,
   ): ResponseWrapper<T> {
     const headers: Record<string, string> = {};
     Object.keys(res.headers || {}).forEach(
-      (k) => (headers[k] = String((res.headers as any)[k]))
+      (k) => (headers[k] = String((res.headers as any)[k])),
     );
     return {
       status: res.status,
@@ -60,7 +60,7 @@ export class AxiosHttpClient implements HttpClient {
   }
 
   private handleSuccess = async <T = unknown>(
-    res: AxiosResponse<T>
+    res: AxiosResponse<T>,
   ): Promise<ResponseWrapper<T>> => {
     const wrapped = this.normalizeResponse(res) as ResponseWrapper<T>;
     if (this.successHandler)
@@ -74,13 +74,16 @@ export class AxiosHttpClient implements HttpClient {
     const anyErr = err as any;
     if (anyErr && anyErr.response) {
       const wrapped = this.normalizeResponse(anyErr.response as AxiosResponse);
-      return Promise.reject({ message: anyErr.message, response: wrapped });
+      return Promise.reject({
+        message: anyErr.message,
+        response: wrapped,
+      });
     }
     return Promise.reject(err);
   };
 
   async request<T = unknown>(
-    config: RequestConfig
+    config: RequestConfig,
   ): Promise<ResponseWrapper<T>> {
     const axiosConfig: AxiosRequestConfig = {
       url: config.url,
@@ -98,7 +101,7 @@ export class AxiosHttpClient implements HttpClient {
   async get<T = unknown>(
     url: string,
     params?: Record<string, unknown>,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>> {
     const res = await this.instance.get<T>(url, { params, headers });
     return this.normalizeResponse(res as AxiosResponse<T>);
@@ -107,7 +110,7 @@ export class AxiosHttpClient implements HttpClient {
   async post<T = unknown>(
     url: string,
     data?: unknown,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>> {
     const res = await this.instance.post<T>(url, data, { headers });
     return this.normalizeResponse(res as AxiosResponse<T>);
@@ -116,7 +119,7 @@ export class AxiosHttpClient implements HttpClient {
   async put<T = unknown>(
     url: string,
     data?: unknown,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>> {
     const res = await this.instance.put<T>(url, data, { headers });
     return this.normalizeResponse(res as AxiosResponse<T>);
@@ -125,7 +128,7 @@ export class AxiosHttpClient implements HttpClient {
   async del<T = unknown>(
     url: string,
     data?: unknown,
-    headers?: Record<string, string>
+    headers?: Record<string, string>,
   ): Promise<ResponseWrapper<T>> {
     const res = await this.instance.delete<T>(url, { data, headers });
     return this.normalizeResponse(res as AxiosResponse<T>);

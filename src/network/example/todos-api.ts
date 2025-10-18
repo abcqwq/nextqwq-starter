@@ -1,5 +1,5 @@
 import { BaseApi } from '@/network/base-api';
-import { HttpClient, ResponseWrapper } from '@/network/types';
+import type { ResponseWrapper } from '@/network/types';
 
 export interface Todo {
   id: number;
@@ -8,10 +8,6 @@ export interface Todo {
 }
 
 export class TodosApi extends BaseApi {
-  constructor(client: HttpClient) {
-    super(client);
-  }
-
   async list(): Promise<ResponseWrapper<Todo[]>> {
     return this.client.get<Todo[]>('/todos');
   }

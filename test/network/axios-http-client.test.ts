@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
 import axios from 'axios';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { AxiosHttpClient } from '@/network/axios-http-client';
 
 vi.mock('axios');
@@ -10,6 +10,7 @@ describe('AxiosHttpClient', () => {
   });
 
   it('should normalize response and return ResponseWrapper', async () => {
+    // biome-ignore lint/suspicious/noExplicitAny: <test file>
     const mockedAxios = axios as unknown as any;
     mockedAxios.create = vi.fn(() => ({
       defaults: { headers: { common: {} } },
@@ -17,28 +18,28 @@ describe('AxiosHttpClient', () => {
       request: vi.fn(async () => ({
         status: 200,
         data: { hello: 'world' },
-        headers: { 'x-test': '1' },
+        headers: { 'x-test': '1' }
       })),
       get: vi.fn(async () => ({
         status: 200,
         data: [1, 2, 3],
-        headers: {},
+        headers: {}
       })),
       post: vi.fn(async () => ({
         status: 201,
         data: { id: 1 },
-        headers: {},
+        headers: {}
       })),
       put: vi.fn(async () => ({
         status: 200,
         data: { ok: true },
-        headers: {},
+        headers: {}
       })),
       delete: vi.fn(async () => ({
         status: 204,
         data: null,
-        headers: {},
-      })),
+        headers: {}
+      }))
     }));
 
     const client = new AxiosHttpClient('http://example.test', 5000);

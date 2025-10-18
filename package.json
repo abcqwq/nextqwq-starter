@@ -14,6 +14,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "test": "vitest",
     "build": "next build",
     "start": "next start",
     "preview": "next start",
@@ -26,13 +27,15 @@
     "next": "15.5.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "axios": "^1.4.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^1.0.0"
   }
 }

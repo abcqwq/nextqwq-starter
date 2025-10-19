@@ -1,22 +1,10 @@
-'use client';
-
 import Center from '@/components/center/Center';
-
-import { useQuery } from '@tanstack/react-query';
-import { getTodosQueryOption } from '@/network/api/get-todos';
+import TodoList from '@/components/todo-list/TodoList';
 
 const Page = () => {
-  const { data, isSuccess, isError, isLoading } = useQuery(
-    getTodosQueryOption()
-  );
-
   return (
     <Center>
-      <p>hola</p>
-      {JSON.stringify(data)}
-      {isSuccess && <p>Data fetched successfully!</p>}
-      {isError && <p>Error fetching data.</p>}
-      {isLoading && <p>Loading...</p>}
+      <TodoList />
     </Center>
   );
 };

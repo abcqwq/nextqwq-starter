@@ -10,6 +10,9 @@ const Container = styled.div`
   // fallback for dvh incase it isn't supported
   height: 100vh;
   height: 100dvh;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
 `;
 
 const Center = ({ children }: { children: React.ReactNode }) => {

@@ -29,7 +29,8 @@
     "next": "15.5.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",

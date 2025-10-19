@@ -24,11 +24,12 @@
     "check": "npm run lint && npm run typecheck"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.90.5",
+    "axios": "^1.4.0",
     "next": "15.5.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "styled-components": "^6.1.19",
-    "axios": "^1.4.0"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
@@ -36,6 +37,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "typescript": "^5",
-    "vitest": "^1.0.0"
+    "vitest": "^3.2.4"
   }
 }

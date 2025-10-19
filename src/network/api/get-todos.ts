@@ -1,9 +1,17 @@
-import { queryOptions } from '@tanstack/react-query';
 import client from '@/network/http-client/todo-client';
 
-const query = async () => {
-  const response = await client.get('/todos');
-  return response.data;
+import { queryOptions } from '@tanstack/react-query';
+import { type Todo, TodosSchema } from '@/entity/todo';
+
+const query = async (): Promise<Todo[]> => {
+  const res = await client.get('/todos');
+
+  const parsed = TodosSchema.safeParse(res.data);
+  if (!parsed.success) {
+    throw new Error(`Invalid todos response: ${parsed.error.message}`);
+  }
+
+  return parsed.data;
 };
 
 export const getTodosQueryOption = () => {

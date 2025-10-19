@@ -1,15 +1,21 @@
 # abcqwq Next.js Starter
 
-A minimal opinionated starter for Next.js (App Router) using TypeScript and styled-components. Use this repo as a base for new projects or as a template on GitHub.
+An opinionated Next.js starter (App Router) using TypeScript, styled-components, Zod, and Tanstack Query.
 
-Features
+## Features
 
 - Next.js (App Router)
 - TypeScript
 - styled-components with SSR registry
-- Biome for linting/formatting (optional)
+- Tanstack Query (`@tanstack/react-query`)
+- Schema validation with Zod (`zod`)
+- Biome for linting/formatting and Vitest for tests
 
-Quick start
+## Requirements
+
+- Node.js >= 18
+
+## Quick start
 
 Install dependencies and start the dev server:
 
@@ -20,19 +26,25 @@ npm run dev
 
 Open http://localhost:3000
 
-What you'll find
+## Important scripts
 
-- `src/app` - app router entry with `layout.tsx` and `page.tsx`
-- `src/components` - example `Center` component
-- `src/styled-components/registry.tsx` - server-side registry for styled-components
-- `next.config.ts`, `tsconfig.json` - basic configuration
+The project defines several npm scripts in `package.json`:
 
-Recommended next steps
+- `dev` - start Next.js in development mode
+- `build` - build the Next.js app
+- `start` / `preview` - start the production server
+- `test` - run unit tests (Vitest)
+- `typecheck` - run `tsc --noEmit`
+- `lint` - run Biome checks
+- `format` - format files with Biome
+- `check` - run lint and typecheck (useful for CI)
 
-- Update `package.json` with your name, repository, and scripts you prefer
-- Add ESLint/Prettier or Biome configs depending on your style choice
-- Add example pages/components and tests
-- Configure CI/CD and deploy settings (Vercel/GitHub Actions)
+Run the combined check:
 
-License
-This project is licensed under the MIT License - see the `LICENSE` file for details.
+```powershell
+npm run check
+```
+
+## License
+
+This project is licensed under the MIT License — see the `LICENSE` file for details.

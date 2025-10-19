@@ -1,6 +1,8 @@
 'use client';
+
+import Center from '@/components/center/Center';
+
 import { useQuery } from '@tanstack/react-query';
-import Center from '@/components/center/center';
 import { getTodosQueryOption } from '@/network/api/get-todos';
 
 const Page = () => {

@@ -6,6 +6,7 @@ import QueryProvider from '@/providers/QueryProvider';
 
 import { getThemePreference } from '@/utils/theme';
 import { ThemeProvider } from '@/providers/ThemeProvider';
+import { baseFont } from '@/fonts';
 
 export const metadata: Metadata = {
   title: 'qwq next starter',
@@ -22,7 +23,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" style={colors as React.CSSProperties}>
-      <body>
+      <body className={baseFont.className}>
         <StyledComponentsRegistry>
           <QueryProvider>
             <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>

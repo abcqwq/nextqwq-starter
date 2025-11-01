@@ -1,11 +1,13 @@
-import Center from '@/components/center/Center';
-import TodoList from '@/components/todo-list/TodoList';
+import Layout from '@/components/home/Layout';
+import Header from '@/components/home/Header';
+import Body from '@/components/home/Body';
 
 const Page = () => {
   return (
-    <Center>
-      <TodoList />
-    </Center>
+    <Layout>
+      <Header />
+      <Body />
+    </Layout>
   );
 };
 

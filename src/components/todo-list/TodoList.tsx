@@ -9,8 +9,6 @@ const Layout = styled.div`
   padding-block: ${16 / 16}rem;
   padding-inline: ${12 / 16}rem;
 
-  border: 2px solid black;
-
   overflow-y: auto;
 
   display: flex;

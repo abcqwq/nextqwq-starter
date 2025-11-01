@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import type { Todo as Entity } from '@/entity/todo';
+import type { Todo as Entity } from '@/network/schemas/todo';
 
 const Container = styled.div`
   display: flex;

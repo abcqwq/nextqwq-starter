@@ -1,7 +1,7 @@
 import client from '@/network/http-client/todo-client';
 
 import { queryOptions } from '@tanstack/react-query';
-import { type Todo, TodosSchema } from '@/entity/todo';
+import { type Todo, TodosSchema } from '@/network/schemas/todo';
 
 const query = async (): Promise<Todo[]> => {
   const res = await client.get('/todos');

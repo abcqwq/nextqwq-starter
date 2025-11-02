@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useContext } from 'react';
 import Cookie from 'js-cookie';
 
 import { LIGHT_COLORS, DARK_COLORS } from '@/consts/COLORS';
@@ -18,6 +18,10 @@ export const ThemeContext = React.createContext({
   theme: 'dark',
   toggleTheme: () => {}
 } as ThemeContextType);
+
+export const useTheme = () => {
+  return useContext(ThemeContext);
+};
 
 export const ThemeProvider = ({ initialTheme, children }: Props) => {
   const [theme, setTheme] = React.useState<string>(initialTheme);

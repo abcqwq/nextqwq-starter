@@ -2,16 +2,21 @@
 import styled from 'styled-components';
 import Item from '@/components/home/Item';
 import Card from '@/components/Card';
+import Button from '@/components/Button';
+
+import { useTheme } from '@/providers/ThemeProvider';
 
 const Container = styled.section`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 
   gap: ${16 / 16}rem;
 `;
 
 const Body = () => {
+  const { toggleTheme } = useTheme();
+
   return (
     <Container>
       <Item
@@ -30,6 +35,8 @@ const Body = () => {
           </>
         }
       />
+
+      <Button onClick={toggleTheme}>button</Button>
     </Container>
   );
 };

@@ -18,6 +18,7 @@ const OuterContainer = styled.div`
   isolation: isolate;
 
   contain: layout style paint;
+  padding: ${12 / 16}rem;
 `;
 
 const Container = styled.div`

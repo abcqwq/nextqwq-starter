@@ -11,14 +11,17 @@ const ItemContainer = styled.div``;
 
 const ItemHeader = styled.button`
   border: none;
-  background-color: var(--color-bg-1);
+  background-color: transparent;
   padding: 0;
   margin: 0;
   font: inherit;
   color: inherit;
 
+  padding: ${12 / 16}rem;
+  border-radius: ${6 / 16}rem;
   &:hover {
     cursor: pointer;
+    background-color: var(--color-bg-3);
   }
 
   width: 100%;
@@ -37,6 +40,7 @@ const ChevronDownStyled = styled(ChevronDown)`
 const ItemContent = styled.div`
   overflow: hidden;
   transition: height 0.3s ease;
+  padding: 0 ${12 / 16}rem;
 `;
 
 export type AccordionItem = {

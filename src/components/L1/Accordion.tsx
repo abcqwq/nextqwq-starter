@@ -66,6 +66,7 @@ const Item = ({
       <ItemHeader onClick={onClickHeader}>
         {title}{' '}
         <ChevronDownStyled
+          size={16}
           style={
             {
               '--rotate': active ? '180deg' : '0deg'

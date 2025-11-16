@@ -1,11 +1,13 @@
 'use client';
 import styled from 'styled-components';
+import React from 'react';
 import Item from '@/components/L3/home/Item';
 import Card from '@/components/L1/Card';
 import Button from '@/components/L1/Button';
 import ProfileCard from '@/components/L1/ProfileCard';
 import Link from '@/components/L1/Link';
 import Accordion from '@/components/L1/Accordion';
+import Dialog from '@/components/L2/Dialog';
 
 import type { AccordionItem } from '@/components/L1/Accordion';
 import { useTheme } from '@/providers/ThemeProvider';
@@ -35,6 +37,7 @@ const accordionItems: AccordionItem[] = [
 
 const Body = () => {
   const { toggleTheme } = useTheme();
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
 
   return (
     <Container>
@@ -71,6 +74,20 @@ const Body = () => {
       />
 
       <Accordion items={accordionItems} />
+
+      <Dialog
+        active={isDialogOpen}
+        actions={[
+          { label: 'close', onClick: () => setIsDialogOpen(false) },
+          { label: 'confirm', onClick: () => setIsDialogOpen(false) }
+        ]}
+        header="dialog header"
+      >
+        <p>hi there, i'm just a normal looking dialog.</p>
+        <p>have a nice day!</p>
+      </Dialog>
+
+      <Button onClick={() => setIsDialogOpen(true)}>open dialog</Button>
     </Container>
   );
 };

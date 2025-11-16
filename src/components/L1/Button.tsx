@@ -8,8 +8,8 @@ const Container = styled.button`
   font: inherit;
   color: inherit;
 
-  padding: ${8 / 16}rem ${12 / 16}rem;
-  border-radius: ${8 / 16}rem;
+  padding: ${4 / 16}rem ${12 / 16}rem;
+  border-radius: ${6 / 16}rem;
 
   box-shadow: var(--shadow);
   background-color: var(--color);

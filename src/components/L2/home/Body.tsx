@@ -1,10 +1,10 @@
 'use client';
 import styled from 'styled-components';
-import Item from '@/components/home/Item';
-import Card from '@/components/Card';
-import Button from '@/components/Button';
-import ProfileCard from '@/components/ProfileCard';
-import Link from '@/components/Link';
+import Item from '@/components/L2/home/Item';
+import Card from '@/components/L1/Card';
+import Button from '@/components/L1/Button';
+import ProfileCard from '@/components/L1/ProfileCard';
+import Link from '@/components/L1/Link';
 
 import { useTheme } from '@/providers/ThemeProvider';
 

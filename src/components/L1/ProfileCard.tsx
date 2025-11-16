@@ -1,7 +1,7 @@
 'use client';
 import styled from 'styled-components';
-import Card from '@/components/Card';
-import Avatar from '@/components/Avatar';
+import Card from '@/components/L1/Card';
+import Avatar from '@/components/L1/Avatar';
 
 const Container = styled.div``;
 

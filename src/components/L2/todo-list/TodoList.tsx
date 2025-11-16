@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import Todo from '@/components/todo-list/Todo';
+import Todo from '@/components/L2/todo-list/Todo';
 
 import { useQuery } from '@tanstack/react-query';
 import { getTodosQueryOption } from '@/network/api/get-todos';

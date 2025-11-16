@@ -1,6 +1,6 @@
 'use client';
 import styled from 'styled-components';
-import Card from '@/components/Card';
+import Card from '@/components/L1/Card';
 
 const Container = styled.div``;
 

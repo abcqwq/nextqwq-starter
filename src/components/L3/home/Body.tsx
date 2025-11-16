@@ -1,11 +1,13 @@
 'use client';
 import styled from 'styled-components';
-import Item from '@/components/L2/home/Item';
+import Item from '@/components/L3/home/Item';
 import Card from '@/components/L1/Card';
 import Button from '@/components/L1/Button';
 import ProfileCard from '@/components/L1/ProfileCard';
 import Link from '@/components/L1/Link';
+import Accordion from '@/components/L1/Accordion';
 
+import type { AccordionItem } from '@/components/L1/Accordion';
 import { useTheme } from '@/providers/ThemeProvider';
 
 const Container = styled.section`
@@ -15,6 +17,21 @@ const Container = styled.section`
 
   gap: ${16 / 16}rem;
 `;
+
+const accordionItems: AccordionItem[] = [
+  {
+    title: 'what is this?',
+    content: 'this is an accordion component.'
+  },
+  {
+    title: 'how does it work?',
+    content: 'it works by toggling the visibility of content sections.'
+  },
+  {
+    title: 'why use it?',
+    content: 'to organize content in a compact and user-friendly way.'
+  }
+];
 
 const Body = () => {
   const { toggleTheme } = useTheme();
@@ -52,6 +69,8 @@ const Body = () => {
           </>
         }
       />
+
+      <Accordion items={accordionItems} />
     </Container>
   );
 };

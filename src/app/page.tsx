@@ -1,6 +1,6 @@
-import Layout from '@/components/L2/home/Layout';
-import Header from '@/components/L2/home/Header';
-import Body from '@/components/L2/home/Body';
+import Layout from '@/components/L3/home/Layout';
+import Header from '@/components/L3/home/Header';
+import Body from '@/components/L3/home/Body';
 
 const Page = () => {
   return (
